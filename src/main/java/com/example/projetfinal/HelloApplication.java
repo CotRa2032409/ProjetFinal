@@ -19,21 +19,18 @@ public class HelloApplication extends Application {
         stage.show();
 
         scene.setOnKeyPressed(ae -> {
-
-            if (ae.getCode() == KeyCode.MULTIPLY  || (ae.isShiftDown() && ae.getCode() == KeyCode.DIGIT8) )
+            if (ae.getCode() == KeyCode.MULTIPLY || (ae.isShiftDown() && ae.getCode() == KeyCode.DIGIT8))
                 System.out.println(14 + 5);
             if (ae.getCode() == KeyCode.DIVIDE || (ae.isShiftDown() && ae.getCode() == KeyCode.DIGIT3))
-                System.out.println(14 +5);
+                System.out.println(14 + 5);
         });
-        System.out.println(Operations.multiplication(8,5));
-        System.out.println(Operations.division(8,5));
+        System.out.println(Operations.multiplication(8, 5));
+        System.out.println(Operations.division(8, 5));
         System.out.println(Operations.exposant2(8));
         System.out.println(Operations.inverseSigne(8));
         System.out.println(Operations.racineCarree(25));
         System.out.println(Operations.unSurResultat());
-
-        System.out.println(CalculBuilder.calculBuilder());
-
+        System.out.println(CalculBuilder.calculBuilderStandard("25+25/5*2-10"));
     }
 
     public static void main(String[] args) {

@@ -7,16 +7,14 @@ import java.util.Stack;
 
 public class CalculBuilder {
 
-    public static String getStringResult() {
-        return stringResult;
-    }
+    private static String stringResult;
 
-    public static String calculBuilder() {
-        stringResult = "55.25 + 00 * 2 / 4";
+    public static String calculBuilderStandard(String calcul) {
         Stack<Double> nombre = new Stack<>();
         Stack<String> operateur = new Stack<>();
         String buffer = "";
-        List<String> stringList = new ArrayList<>(Arrays.asList(stringResult.split("")));
+        List<String> stringList = new ArrayList<>(Arrays.asList(calcul.split("")));
+        double resultat = 0;
         for (int i = 0; i < stringList.size(); i++) {
             if (stringList.get(i).matches("[0-9]|\\.")) {
                 buffer += stringList.get(i);
@@ -24,15 +22,48 @@ public class CalculBuilder {
             if (stringList.get(i).matches("[+\\-*/]")) {
                 nombre.push(Double.parseDouble(buffer));
                 buffer = "";//Buffer goes BRUH!!
+                if (!(nombre.size() == 2)) {
+                    operateur.push(stringList.get(i));
+                }
+            }
+            else if (i == stringList.size() - 1){
+                nombre.push(Double.parseDouble(buffer));
+            }
+            if (!operateur.empty() && nombre.size() == 2) {
+                double number2 = nombre.peek();
+                nombre.pop();
+                double number1 = nombre.peek();
+                nombre.pop();
+                switch (operateur.peek()) {
+                    case "+":
+                        nombre.push(Operations.addition(number1, number2));
+                        operateur.pop();
+                        break;
+                    case "-":
+                        nombre.push(Operations.soustraction(number1, number2));
+                        operateur.pop();
+                        break;
+                    case "*":
+                        nombre.push(Operations.multiplication(number1, number2));
+                        operateur.pop();
+                        break;
+                    case "/":
+                        operateur.pop();
+                        nombre.push(Operations.division(number1, number2));
+                        break;
+                }
                 operateur.push(stringList.get(i));
             }
+
         }
-        return "w";
+        return String.valueOf(nombre.peek());
     }
 
     public static void setStringResult(String stringResult) {
         CalculBuilder.stringResult = stringResult;
     }
 
-    private static String stringResult;
+    public static String getStringResult() {
+        return stringResult;
+    }
 }
