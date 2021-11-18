@@ -10,6 +10,9 @@ import java.io.IOException;
 
 
 public class HelloApplication extends Application {
+
+    private static Stage stage;
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
@@ -35,5 +38,13 @@ public class HelloApplication extends Application {
 
     public static void main(String[] args) {
         launch();
+    }
+
+    public static Stage getStage() {
+        return stage;
+    }
+
+    public static void setStage(Stage stage) {
+        HelloApplication.stage = stage;
     }
 }
