@@ -48,7 +48,7 @@ public class CalculBuilder {
                         operateur.pop();
                     }
                     case "/" -> {
-                        operateur.pop();//allo
+                        operateur.pop();
                         nombre.push(Operations.division(number1, number2));
                     }
                 }
