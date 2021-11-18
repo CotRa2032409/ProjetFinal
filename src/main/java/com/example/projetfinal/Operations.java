@@ -34,6 +34,6 @@ public class Operations {
     }
 
     public static double unSurResultat() {
-        return Math.pow(res,-1);
+        return Math.pow(res, -1);
     }
 }
