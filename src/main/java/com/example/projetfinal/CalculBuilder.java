@@ -35,22 +35,22 @@ public class CalculBuilder {
                 double number1 = nombre.peek();
                 nombre.pop();
                 switch (operateur.peek()) {
-                    case "+":
+                    case "+" -> {
                         nombre.push(Operations.addition(number1, number2));
                         operateur.pop();
-                        break;
-                    case "-":
+                    }
+                    case "-" -> {
                         nombre.push(Operations.soustraction(number1, number2));
                         operateur.pop();
-                        break;
-                    case "*":
+                    }
+                    case "*" -> {
                         nombre.push(Operations.multiplication(number1, number2));
                         operateur.pop();
-                        break;
-                    case "/":
-                        operateur.pop();
+                    }
+                    case "/" -> {
+                        operateur.pop();//allo
                         nombre.push(Operations.division(number1, number2));
-                        break;
+                    }
                 }
                 operateur.push(stringList.get(i));
             }
