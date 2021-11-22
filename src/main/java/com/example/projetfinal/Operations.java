@@ -2,39 +2,39 @@ package com.example.projetfinal;
 
 public class Operations {
 
-    private static double res;
-
-    public static double soustraction(double a, double b) {
-
-        return res = a - b;
-    }
+    private static String res;
 
     public static double addition(double a, double b) {
-        return res = a + b;
+        return b + a;
     }
-
+    public static double soustraction(double a, double b) {
+        return b - a;
+    }
     public static double multiplication(double a, double b) {
-        return res = a * b;
+        return b * a;
     }
-
     public static double division(double a, double b) {
-        return res = a / b;
+        return b / a;
     }
 
-    public static double racineCarree(double a) {
-        return res = Math.sqrt(a);
+
+    public static String racineCarree(String a) {
+        res = CalculBuilder.calculBuilderStandard(a);
+        return res = String.valueOf(Math.sqrt(Double.parseDouble(a)));
     }
 
-    public static double exposant2(double a) {
-        return res = Math.pow(a, 2);
+    public static String exposant2(String a) {
+        res = CalculBuilder.calculBuilderStandard(a);
+        return res = String.valueOf(Math.pow(Double.parseDouble(a), 2));
     }
 
-    public static double inverseSigne(double a) {
-        return a * -1;
+    public static String inverseSigne(String a) {
+        res = CalculBuilder.calculBuilderStandard(a);
+        return String.valueOf(Double.parseDouble(res) * -1);
     }
 
-    public static double unSurResultat() {
-        return Math.pow(res, -1);
+    public static String unSurResultat() {
+        return String.valueOf(Math.pow(Double.parseDouble(res), -1));
     }
 
     public static double modulo(double a, double b) {

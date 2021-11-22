@@ -25,8 +25,7 @@ public class CalculBuilder {
                 if (!(nombre.size() == 2)) {
                     operateur.push(stringList.get(i));
                 }
-            }
-            else if (i == stringList.size() - 1){
+            } else if (i == stringList.size() - 1) {
                 nombre.push(Double.parseDouble(buffer));
             }
             if (!operateur.empty() && nombre.size() == 2) {
@@ -57,6 +56,36 @@ public class CalculBuilder {
 
         }
         return String.valueOf(nombre.peek());
+    }
+
+    public static String calculBuilderScientifique(String calcul) {
+        Stack<Double> nombre = new Stack<>();
+        Stack<String> operateur = new Stack<>();
+        String buffer = "";
+        List<String> stringList = new ArrayList<>(Arrays.asList(calcul.split("")));
+        double resultat = 0;
+        for (int i = 0; i < stringList.size(); i++) {
+            if (stringList.get(i).matches("[0-9]|\\.")) {
+                buffer += stringList.get(i);
+            }
+            if (stringList.get(i).matches("[+\\-*/]")) {
+                nombre.push(Double.parseDouble(buffer));
+                buffer = "";//Buffer goes BRUH!!
+                if (!(nombre.size() == 2)) {
+                    operateur.push(stringList.get(i));
+                }
+            }
+        }
+        return "allo";
+    }
+
+    public static int priorite(String operateur) {
+        int priorite = 0;
+        if (operateur.equals("*") || operateur.equals("/"))
+            priorite = 1;
+        if (operateur.equals("("))
+            priorite = 3;
+        return priorite;
     }
 
     public static void setStringResult(String stringResult) {

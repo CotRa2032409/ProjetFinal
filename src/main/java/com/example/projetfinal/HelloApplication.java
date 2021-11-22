@@ -36,7 +36,7 @@ public class HelloApplication extends Application {
         System.out.println(Operations.tangente(45));
         System.out.println(Operations.arcCos(0.001));
         System.out.println(Operations.arcSin(0.001));
-
+        System.out.println(Operations.inverseSigne("25 + 25"));
     }
 
     public static void main(String[] args) {
