@@ -20,12 +20,12 @@ public class Operations {
 
     public static String racineCarree(String a) {
         res = CalculBuilder.calculBuilderStandard(a);
-        return res = String.valueOf(Math.sqrt(Double.parseDouble(a)));
+        return res = String.valueOf(Math.sqrt(Double.parseDouble(res)));
     }
 
     public static String exposant2(String a) {
         res = CalculBuilder.calculBuilderStandard(a);
-        return res = String.valueOf(Math.pow(Double.parseDouble(a), 2));
+        return res = String.valueOf(Math.pow(Double.parseDouble(res), 2));
     }
 
     public static String inverseSigne(String a) {
@@ -33,7 +33,8 @@ public class Operations {
         return String.valueOf(Double.parseDouble(res) * -1);
     }
 
-    public static String unSurResultat() {
+    public static String unSurResultat(String a) {
+        res = CalculBuilder.calculBuilderStandard(a);
         return String.valueOf(Math.pow(Double.parseDouble(res), -1));
     }
 
