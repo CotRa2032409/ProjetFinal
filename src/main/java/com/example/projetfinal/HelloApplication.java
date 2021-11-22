@@ -21,6 +21,7 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
 
+
         scene.setOnKeyPressed(ae -> {
             if (ae.getCode() == KeyCode.MULTIPLY || (ae.isShiftDown() && ae.getCode() == KeyCode.DIGIT8))
                 System.out.println(14 + 5);
@@ -30,7 +31,7 @@ public class HelloApplication extends Application {
 
         System.out.println(CalculBuilder.calculBuilderStandard("25+25/5*2-10"));
         System.out.println(CalculBuilder.calculBuilderStandard("3-2"));
-        System.out.println(Operations.inverseSigne("25 + 25"));
+        System.out.println(Operations.inverseSigne("-25 + 25"));
         System.out.println(Operations.racineCarree("88+688"));
     }
 
