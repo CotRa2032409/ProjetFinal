@@ -79,13 +79,17 @@ public class CalculBuilder {
         return "allo";
     }
 
-    public static int priorite(String operateur) {
+    public int priorite(String operateur) {
         int priorite = 0;
         if (operateur.equals("*") || operateur.equals("/"))
             priorite = 1;
+        if (operateur.equals("^"))
+            priorite = 2;
         if (operateur.equals("("))
             priorite = 3;
         return priorite;
+
+
     }
 
     public static void setStringResult(String stringResult) {

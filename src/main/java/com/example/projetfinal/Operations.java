@@ -5,35 +5,36 @@ public class Operations {
     private static String res;
 
     public static double addition(double a, double b) {
-        return b + a;
+        return a + b;
     }
     public static double soustraction(double a, double b) {
-        return b - a;
+        return a - b;
     }
     public static double multiplication(double a, double b) {
-        return b * a;
+        return a * b;
     }
     public static double division(double a, double b) {
-        return b / a;
+        return a / b;
     }
 
 
-    public static String racineCarree(String a) {
-        res = CalculBuilder.calculBuilderStandard(a);
-        return res = String.valueOf(Math.sqrt(Double.parseDouble(a)));
+    public static String racineCarree(String calcul) {
+        res = CalculBuilder.calculBuilderStandard(calcul);
+        return res = String.valueOf(Math.sqrt(Double.parseDouble(res)));
     }
 
-    public static String exposant2(String a) {
-        res = CalculBuilder.calculBuilderStandard(a);
-        return res = String.valueOf(Math.pow(Double.parseDouble(a), 2));
+    public static String exposant2(String calcul) {
+        res = CalculBuilder.calculBuilderStandard(calcul);
+        return res = String.valueOf(Math.pow(Double.parseDouble(res), 2));
     }
 
-    public static String inverseSigne(String a) {
-        res = CalculBuilder.calculBuilderStandard(a);
+    public static String inverseSigne(String calcul) {
+        res = CalculBuilder.calculBuilderStandard(calcul);
         return String.valueOf(Double.parseDouble(res) * -1);
     }
 
-    public static String unSurResultat() {
+    public static String unSurResultat(String calcul) {
+        res = CalculBuilder.calculBuilderStandard(calcul);
         return String.valueOf(Math.pow(Double.parseDouble(res), -1));
     }
 

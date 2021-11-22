@@ -29,14 +29,9 @@ public class HelloApplication extends Application {
         });
 
         System.out.println(CalculBuilder.calculBuilderStandard("25+25/5*2-10"));
-        System.out.println(Operations.modulo(8,5));
-        System.out.println(Operations.exposants(2, 4 ));
-        System.out.println(Operations.sinus(45));
-        System.out.println(Operations.cosinus(45));
-        System.out.println(Operations.tangente(45));
-        System.out.println(Operations.arcCos(0.001));
-        System.out.println(Operations.arcSin(0.001));
+        System.out.println(CalculBuilder.calculBuilderStandard("3-2"));
         System.out.println(Operations.inverseSigne("25 + 25"));
+        System.out.println(Operations.racineCarree("88+688"));
     }
 
     public static void main(String[] args) {
