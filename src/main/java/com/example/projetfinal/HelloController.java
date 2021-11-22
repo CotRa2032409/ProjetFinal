@@ -17,37 +17,49 @@ public class HelloController {
     private String insert = "";
     @FXML
     private Button bou0 = new Button("0");
-    private final Button bou1 = new Button("1");
-    private final Button bou2 = new Button("2");
-    private final Button bou3 = new Button("3");
-    private final Button bou4 = new Button("4");
-    private final Button bou5 = new Button("5");
-    private final Button bou6 = new Button("6");
-    private final Button bou7 = new Button("7");
-    private final Button bou8 = new Button("8");
-    private final Button bou9 = new Button("9");
-    private final Button bouPoint = new Button(".");
-    private final Button bouNegatif = new Button("+/-");
-    private final Button bouCarre = new Button("+/-");
-    private final Button bouRacine = new Button("+/-");
-    private final Button bouPlus = new Button("+");
-    private final Button bouMoins = new Button("-");
-    private final Button bouFois = new Button("*");
-    private final Button bouDiviser = new Button("/");
-    private final Button bouInverse = new Button("1/x");
-    private final Button bouEgal = new Button("=");
-    private final Button bouEffacer = new Button("Effacer");
-
-    public HelloController() {
-    }
+    @FXML
+    private Button bou1 = new Button("1");
+    @FXML
+    private Button bou2 = new Button("2");
+    @FXML
+    private Button bou3 = new Button("3");
+    @FXML
+    private Button bou4 = new Button("4");
+    @FXML
+    private Button bou5 = new Button("5");
+    @FXML
+    private Button bou6 = new Button("6");
+    @FXML
+    private Button bou7 = new Button("7");
+    @FXML
+    private Button bou8 = new Button("8");
+    @FXML
+    private Button bou9 = new Button("9");
+    @FXML
+    private Button bouPoint = new Button(".");
+    @FXML
+    private Button bouNegatif = new Button("+/-");
+    @FXML
+    private Button bouCarre = new Button("+/-");
+    @FXML
+    private Button bouRacine = new Button("+/-");
+    @FXML
+    private Button bouPlus = new Button("+");
+    @FXML
+    private Button bouMoins = new Button("-");
+    @FXML
+    private Button bouFois = new Button("*");
+    @FXML
+    private Button bouDiviser = new Button("/");
+    @FXML
+    private Button bouInverse = new Button("1/x");
+    @FXML
+    private Button bouEgal = new Button("=");
+    @FXML
+    private Button bouEffacer = new Button("Effacer");
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
-
-    @FXML
-    protected void onScientifiqueButtonClick() throws IOException {
+    protected void onScientifiqueButtonClick() {
 
     }
 
