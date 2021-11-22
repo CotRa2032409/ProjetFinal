@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="468.0" prefWidth="769.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetfinal.HelloController">
+<BorderPane prefHeight="468.0" prefWidth="769.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetfinal.HelloController">
     <top>
         <MenuBar prefHeight="0.0" prefWidth="758.0" BorderPane.alignment="CENTER">
             <menus>
@@ -19,7 +27,7 @@
         </MenuBar>
     </top>
     <center>
-        <VBox alignment="CENTER" fillWidth="false" prefHeight="0.0" prefWidth="0.0" spacing="20.0" BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER" fillWidth="false" prefHeight="477.0" prefWidth="823.0" spacing="20.0" BorderPane.alignment="CENTER">
             <TextField fx:id="textField" promptText="Votre calcul">
                 <VBox.margin>
                     <Insets bottom="60.0" />
@@ -44,17 +52,17 @@
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 </rowConstraints>
                 <children>
-                    <Button mnemonicParsing="false" onAction="#onNumberClick" prefHeight="126.0" prefWidth="369.0" text="7" />
-                    <Button mnemonicParsing="false" onAction="#onNumberClick" prefHeight="154.0" prefWidth="410.0" text="4" GridPane.rowIndex="1" />
-                    <Button mnemonicParsing="false" onAction="#onNumberClick" prefHeight="95.0" prefWidth="432.0" text="1" GridPane.rowIndex="2" />
+                    <Button fx:id="bou7" mnemonicParsing="false" onAction="#onNumber7Click" prefHeight="126.0" prefWidth="369.0" text="7" />
+                    <Button fx:id="bou4" mnemonicParsing="false" onAction="#onNumber4Click" prefHeight="154.0" prefWidth="410.0" text="4" GridPane.rowIndex="1" />
+                    <Button fx:id="bou1" mnemonicParsing="false" onAction="#onNumber1Click" prefHeight="95.0" prefWidth="432.0" text="1" GridPane.rowIndex="2" />
                     <Button fx:id="bou0" mnemonicParsing="false" onAction="#onNumber0Click" prefHeight="164.0" prefWidth="394.0" text="0" GridPane.rowIndex="3" />
-                    <Button mnemonicParsing="false" onAction="#onNumberClick" prefHeight="80.0" prefWidth="371.0" text="8" GridPane.columnIndex="1" />
-                    <Button mnemonicParsing="false" onAction="#onNumberClick" prefHeight="75.0" prefWidth="389.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                    <Button mnemonicParsing="false" onAction="#onNumberClick" prefHeight="123.0" prefWidth="375.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                    <Button mnemonicParsing="false" onAction="#onNumberClick" prefHeight="110.0" prefWidth="181.0" text="." GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                    <Button mnemonicParsing="false" onAction="#onNumberClick" prefHeight="210.0" prefWidth="418.0" text="9" GridPane.columnIndex="2" />
-                    <Button mnemonicParsing="false" onAction="#onNumberClick" prefHeight="123.0" prefWidth="375.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                    <Button mnemonicParsing="false" onAction="#onNumberClick" prefHeight="123.0" prefWidth="375.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                    <Button fx:id="bou8" mnemonicParsing="false" onAction="#onNumber8Click" prefHeight="80.0" prefWidth="371.0" text="8" GridPane.columnIndex="1" />
+                    <Button fx:id="bou5" mnemonicParsing="false" onAction="#onNumber5Click" prefHeight="75.0" prefWidth="389.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <Button fx:id="bou2" mnemonicParsing="false" onAction="#onNumber2Click" prefHeight="123.0" prefWidth="375.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <Button fx:id="bouPoint" mnemonicParsing="false" onAction="#onPointClick" prefHeight="110.0" prefWidth="181.0" text="." GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    <Button fx:id="bou9" mnemonicParsing="false" onAction="#onNumber9Click" prefHeight="210.0" prefWidth="418.0" text="9" GridPane.columnIndex="2" />
+                    <Button fx:id="bou6" mnemonicParsing="false" onAction="#onNumber6Click" prefHeight="123.0" prefWidth="375.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                    <Button fx:id="bou3" mnemonicParsing="false" onAction="#onNumber3Click" prefHeight="123.0" prefWidth="375.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                     <Button mnemonicParsing="false" prefHeight="123.0" prefWidth="375.0" text="+/-" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                     <Button mnemonicParsing="false" prefHeight="58.0" prefWidth="528.0" text="x²" GridPane.columnIndex="3" />
                     <Button mnemonicParsing="false" prefHeight="57.0" prefWidth="427.0" text="+" GridPane.columnIndex="3" GridPane.rowIndex="1" />
@@ -64,7 +72,7 @@
                     <Button mnemonicParsing="false" prefHeight="126.0" prefWidth="369.0" text="*" GridPane.columnIndex="4" GridPane.rowIndex="1" />
                     <Button mnemonicParsing="false" prefHeight="126.0" prefWidth="369.0" text="/" GridPane.columnIndex="4" GridPane.rowIndex="2" />
                     <Button mnemonicParsing="false" prefHeight="57.0" prefWidth="312.0" text="=" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-                    <Button mnemonicParsing="false" prefHeight="57.0" prefWidth="312.0" text="Effacer" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                    <Button fx:id="bouEffacer" mnemonicParsing="false" onAction="#onEffacerClick" prefHeight="57.0" prefWidth="312.0" text="Effacer" GridPane.columnIndex="5" GridPane.rowIndex="3" />
                 </children>
             </GridPane>
             <padding>
