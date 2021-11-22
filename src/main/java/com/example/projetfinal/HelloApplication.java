@@ -27,13 +27,16 @@ public class HelloApplication extends Application {
             if (ae.getCode() == KeyCode.DIVIDE || (ae.isShiftDown() && ae.getCode() == KeyCode.DIGIT3))
                 System.out.println(14 + 5);
         });
-        System.out.println(Operations.multiplication(8, 5));
-        System.out.println(Operations.division(8, 5));
-        System.out.println(Operations.exposant2(8));
-        System.out.println(Operations.inverseSigne(8));
-        System.out.println(Operations.racineCarree(25));
-        System.out.println(Operations.unSurResultat());
+
         System.out.println(CalculBuilder.calculBuilderStandard("25+25/5*2-10"));
+        System.out.println(Operations.modulo(8,5));
+        System.out.println(Operations.exposants(2, 4 ));
+        System.out.println(Operations.sinus(45));
+        System.out.println(Operations.cosinus(45));
+        System.out.println(Operations.tangente(45));
+        System.out.println(Operations.arcCos(0.001));
+        System.out.println(Operations.arcSin(0.001));
+        System.out.println(Operations.inverseSigne("25 + 25"));
     }
 
     public static void main(String[] args) {
