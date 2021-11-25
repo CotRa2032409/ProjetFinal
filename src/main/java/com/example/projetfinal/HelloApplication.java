@@ -7,6 +7,7 @@ import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.lang.invoke.CallSite;
 
 
 public class HelloApplication extends Application {
@@ -22,17 +23,7 @@ public class HelloApplication extends Application {
         stage.show();
 
 
-        scene.setOnKeyPressed(ae -> {
-            if (ae.getCode() == KeyCode.MULTIPLY || (ae.isShiftDown() && ae.getCode() == KeyCode.DIGIT8))
-                System.out.println(14 + 5);
-            if (ae.getCode() == KeyCode.DIVIDE || (ae.isShiftDown() && ae.getCode() == KeyCode.DIGIT3))
-                System.out.println(14 + 5);
-        });
-
-        System.out.println(CalculBuilder.calculBuilderStandard("25+25/5*2-10"));
-        System.out.println(CalculBuilder.calculBuilderStandard("3-2"));
-        System.out.println(Operations.racineCarree("88+688"));
-        System.out.println(Operations.racineArbitraire(25,2));
+        System.out.println(CalculBuilder.calculBuilderScientifique("2+4*3"));
     }
 
     public static void main(String[] args) {
