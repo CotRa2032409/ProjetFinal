@@ -31,8 +31,8 @@ public class HelloApplication extends Application {
 
         System.out.println(CalculBuilder.calculBuilderStandard("25+25/5*2-10"));
         System.out.println(CalculBuilder.calculBuilderStandard("3-2"));
-        System.out.println(Operations.inverseSigne("-25 + 25"));
         System.out.println(Operations.racineCarree("88+688"));
+        System.out.println(Operations.racineArbitraire(25,2));
     }
 
     public static void main(String[] args) {
@@ -43,7 +43,4 @@ public class HelloApplication extends Application {
         return stage;
     }
 
-    public static void setStage(Stage stage) {
-        HelloApplication.stage = stage;
-    }
 }

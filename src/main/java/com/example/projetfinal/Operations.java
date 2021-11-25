@@ -47,7 +47,7 @@ public class Operations {
     }
 
     public static double racineArbitraire(double nombreDansRacine, double exposantRacine) {
-        return nombreDansRacine;
+        return Math.pow(nombreDansRacine,1/exposantRacine);
     }
 
     public static double sinus(double angleDeg) {
