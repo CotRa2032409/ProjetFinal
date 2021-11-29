@@ -5,36 +5,42 @@ public class Operations {
     private static String res;
 
     public static double addition(double a, double b) {
-        return b + a;
+        return a + b;
     }
+
     public static double soustraction(double a, double b) {
-        return b - a;
+        return a - b;
     }
+
     public static double multiplication(double a, double b) {
-        return b * a;
+        return a * b;
     }
+
     public static double division(double a, double b) {
-        return b / a;
+        return a / b;
     }
 
 
-    public static String racineCarree(String a) {
-        res = CalculBuilder.calculBuilderStandard(a);
+    public static String racineCarree(String calcul) {
+        res = CalculBuilder.calculBuilderStandard(calcul);
         return res = String.valueOf(Math.sqrt(Double.parseDouble(res)));
     }
 
-    public static String exposant2(String a) {
-        res = CalculBuilder.calculBuilderStandard(a);
+    public static String exposant2(String calcul) {
+        res = CalculBuilder.calculBuilderStandard(calcul);
         return res = String.valueOf(Math.pow(Double.parseDouble(res), 2));
     }
 
-    public static String inverseSigne(String a) {
-        res = CalculBuilder.calculBuilderStandard(a);
+    public static String inverseSigne(String calcul) {
+        res = CalculBuilder.calculBuilderStandard(calcul);
+        if (res.equals(String.valueOf(0.0))) {
+            return res;
+        }
         return String.valueOf(Double.parseDouble(res) * -1);
     }
 
-    public static String unSurResultat(String a) {
-        res = CalculBuilder.calculBuilderStandard(a);
+    public static String unSurResultat(String calcul) {
+        res = CalculBuilder.calculBuilderStandard(calcul);
         return String.valueOf(Math.pow(Double.parseDouble(res), -1));
     }
 
@@ -47,7 +53,7 @@ public class Operations {
     }
 
     public static double racineArbitraire(double nombreDansRacine, double exposantRacine) {
-        return nombreDansRacine;
+        return Math.pow(nombreDansRacine, 1 / exposantRacine);
     }
 
     public static double sinus(double angleDeg) {
@@ -64,12 +70,25 @@ public class Operations {
 
     public static double arcCos(double angleRad) {
         angleRad = Math.acos(angleRad);
-        return Math.toDegrees(angleRad);
+        return angleRad;
     }
 
     public static double arcSin(double angleRad) {
         angleRad = Math.asin(angleRad);
         return Math.toDegrees(angleRad);
     }
+
+    public static double arcTan(double angleRad) {
+        return Math.toDegrees(Math.atan(angleRad));
+    }
+
+    public static double euler(double exposant) {
+        return Math.exp(exposant);
+    }
+
+    public static double log(double nombre) {
+        return Math.log(nombre);
+    }
+
 
 }
