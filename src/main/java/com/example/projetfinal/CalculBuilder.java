@@ -81,7 +81,7 @@ public class CalculBuilder {
                 lastTokenIsANumber = false;
                 if (!(nombre.size() == 2)) {
                     operateur.push(stringList.get(i));
-                } else if (priorite(stringList.get(i)) > priorite(operateur.peek())) {
+                } /*else if (priorite(stringList.get(i)) > priorite(operateur.peek())) {
                     String buffer3 = stringList.get(i - 1);
                     for (int j = i; j < stringList.size(); j++) {
                         buffer3 += stringList.get(j);
@@ -90,9 +90,8 @@ public class CalculBuilder {
                             operateur.pop();
                     }
                     calculBuilderScientifique(buffer3);
-                }
+                } */
             }
-
             if (stringList.get(i).matches("\\(")) {
                 String buffer2 = "";
                 for (int j = i + 1; j < stringList.size(); j++) {
