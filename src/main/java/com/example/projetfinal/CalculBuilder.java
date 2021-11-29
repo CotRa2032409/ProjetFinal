@@ -7,7 +7,7 @@ import java.util.Stack;
 
 public class CalculBuilder {
 
-    private static String stringResult = "";
+    private static final StringBuilder stringResult = new StringBuilder();
 
     public static String calculBuilderStandard(String calcul) {
         Stack<Double> nombre = new Stack<>();
@@ -15,7 +15,6 @@ public class CalculBuilder {
         String buffer = "";
         boolean lastTokenIsANumber = false;
         List<String> stringList = new ArrayList<>(Arrays.asList(calcul.split("")));
-        double resultat = 0;
         for (int i = 0; i < stringList.size(); i++) {
             if (stringList.get(i).matches("[0-9]|\\.") || lastTokenIsANumber == false) {
                 buffer += stringList.get(i);
@@ -56,7 +55,6 @@ public class CalculBuilder {
                 }
                 operateur.push(stringList.get(i));
             }
-
         }
         return String.valueOf(nombre.peek());
     }
@@ -67,30 +65,33 @@ public class CalculBuilder {
         String buffer = "";
         boolean lastTokenIsANumber = false;
         List<String> stringList = new ArrayList<>(Arrays.asList(calcul.split("")));
-        double resultat = 0;
         for (int i = 0; i < stringList.size(); i++) {
             if (stringList.get(i).matches("[0-9]|\\.") || lastTokenIsANumber == false) {
                 buffer += stringList.get(i);
-                stringResult += stringList.get(i);
+                stringResult.append(stringList.get(i));
                 lastTokenIsANumber = true;
             }
             if (stringList.get(i).matches("[+\\-*/]") && !stringList.get(i).matches("-?[0-9]?")) {
                 nombre.push(Double.parseDouble(buffer));
-                stringResult += stringList.get(i);
+                stringResult.append(stringList.get(i));
                 buffer = "";//Buffer goes BRUH!!
                 lastTokenIsANumber = false;
                 if (!(nombre.size() == 2)) {
                     operateur.push(stringList.get(i));
-                } /*else if (priorite(stringList.get(i)) > priorite(operateur.peek())) {
+                } else if (priorite(stringList.get(i)) > priorite(operateur.peek())) {
                     String buffer3 = stringList.get(i - 1);
                     for (int j = i; j < stringList.size(); j++) {
                         buffer3 += stringList.get(j);
-                        nombre.pop();
-                        if (!operateur.empty())
-                            operateur.pop();
                     }
-                    calculBuilderScientifique(buffer3);
-                } */
+                    stringResult.delete(stringResult.length() - 2, stringResult.length());
+                    nombre.pop();
+                    nombre.pop();
+                    nombre.push(Double.parseDouble(calculBuilderStandard(buffer3)));
+                    stringResult.append(nombre.peek());
+                    nombre.push(Double.parseDouble(calculBuilderStandard(String.valueOf(stringResult))));
+                    stringResult.delete(0, stringResult.length());
+                    break;
+                }
             }
             if (stringList.get(i).matches("\\(")) {
                 String buffer2 = "";
