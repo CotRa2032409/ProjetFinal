@@ -3,11 +3,9 @@ package com.example.projetfinal;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.lang.invoke.CallSite;
 
 
 public class HelloApplication extends Application {
@@ -24,6 +22,7 @@ public class HelloApplication extends Application {
 
 
         System.out.println(CalculBuilder.calculBuilderScientifique("2+4*3"));
+        System.out.println(CalculBuilder.calculBuilderScientifique("1*10+4/2"));
     }
 
     public static void main(String[] args) {
