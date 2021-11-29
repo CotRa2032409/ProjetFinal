@@ -28,6 +28,7 @@ public class CalculBuilder {
                     operateur.push(stringList.get(i));
                 }
             } else if (i == stringList.size() - 1) {
+
                 nombre.push(Double.parseDouble(buffer));
             }
             if (!operateur.empty() && nombre.size() == 2) {
