@@ -12,55 +12,64 @@ public class HelloController {
     @FXML
     private Label welcomeText;
     @FXML
+    private Label reponse;
+    @FXML
+    private Label historique;
+    @FXML
     private TextField textField;
     @FXML
     private String insert = "";
     @FXML
-    private Button bou0 = new Button("0");
+    private Button bou0;
     @FXML
-    private Button bou1 = new Button("1");
+    private Button bou1;
     @FXML
-    private Button bou2 = new Button("2");
+    private Button bou2;
     @FXML
-    private Button bou3 = new Button("3");
+    private Button bou3;
     @FXML
-    private Button bou4 = new Button("4");
+    private Button bou4;
     @FXML
-    private Button bou5 = new Button("5");
+    private Button bou5;
     @FXML
-    private Button bou6 = new Button("6");
+    private Button bou6;
     @FXML
-    private Button bou7 = new Button("7");
+    private Button bou7;
     @FXML
-    private Button bou8 = new Button("8");
+    private Button bou8;
     @FXML
-    private Button bou9 = new Button("9");
+    private Button bou9;
     @FXML
-    private Button bouPoint = new Button(".");
+    private Button bouPoint;
     @FXML
-    private Button bouNegatif = new Button("+/-");
+    private Button bouNegatif;
     @FXML
-    private Button bouCarre = new Button("+/-");
+    private Button bouCarre;
     @FXML
-    private Button bouRacine = new Button("+/-");
+    private Button bouRacine;
     @FXML
-    private Button bouPlus = new Button("+");
+    private Button bouPlus;
     @FXML
-    private Button bouMoins = new Button("-");
+    private Button bouMoins;
     @FXML
-    private Button bouFois = new Button("*");
+    private Button bouFois;
     @FXML
-    private Button bouDiviser = new Button("/");
+    private Button bouDiviser;
     @FXML
-    private Button bouInverse = new Button("1/x");
+    private Button bouInverse;
     @FXML
-    private Button bouEgal = new Button("=");
+    private Button bouEgal;
     @FXML
-    private Button bouEffacer = new Button("Effacer");
+    private Button bouEffacer;
+
+    @FXML
+    protected void onStandardButtonClick() {
+        HelloApplication.setScene1();
+    }
 
     @FXML
     protected void onScientifiqueButtonClick() {
-
+        HelloApplication.setScene2();
     }
 
     @FXML
@@ -178,9 +187,22 @@ public class HelloController {
     }
 
     @FXML
-    protected void onEgalClick() {
-        insert = (CalculBuilder.calculBuilderStandard(textField.getText()));
-        textField.setText(insert);
+    protected void onEgalClick() throws NumberFormatException {
+        try {
+            insert = (CalculBuilder.calculBuilderStandard(textField.getText()));
+            reponse.setText(insert);
+            historique.setText("Historique :\n" + reponse.getText());
+            //Pas fini
+            //VBox???
+            insert = "";
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            reponse.setText("Erreur");
+        }
+        finally {
+            insert = "";
+        }
     }
 
     @FXML
