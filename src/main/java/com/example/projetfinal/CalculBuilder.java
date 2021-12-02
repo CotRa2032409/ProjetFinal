@@ -1,5 +1,7 @@
 package com.example.projetfinal;
 
+import javafx.concurrent.Task;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -13,17 +15,14 @@ public class CalculBuilder {
         Stack<Double> nombre = new Stack<>();
         Stack<String> operateur = new Stack<>();
         String buffer = "";
-        boolean lastTokenIsANumber = false;
         List<String> stringList = new ArrayList<>(Arrays.asList(calcul.split("")));
         for (int i = 0; i < stringList.size(); i++) {
-            if (stringList.get(i).matches("[0-9]|\\.") || lastTokenIsANumber == false) {
+            if (stringList.get(i).matches("[0-9]|\\.") || stringList.get(i).matches("-?\\d")) {
                 buffer += stringList.get(i);
-                lastTokenIsANumber = true;
             }
-            if (stringList.get(i).matches("[+\\-*/]") && !stringList.get(i).matches("-?[0-9]?")) {
+            if (stringList.get(i).matches("[+\\-*/]")) {
                 nombre.push(Double.parseDouble(buffer));
                 buffer = "";//Buffer goes BRUH!!
-                lastTokenIsANumber = false;
                 if (!(nombre.size() == 2)) {
                     operateur.push(stringList.get(i));
                 }
@@ -64,19 +63,16 @@ public class CalculBuilder {
         Stack<Double> nombre = new Stack<>();
         Stack<String> operateur = new Stack<>();
         String buffer = "";
-        boolean lastTokenIsANumber = false;
         List<String> stringList = new ArrayList<>(Arrays.asList(calcul.split("")));
         for (int i = 0; i < stringList.size(); i++) {
-            if (stringList.get(i).matches("[0-9]|\\.") || lastTokenIsANumber == false) {
+            if (stringList.get(i).matches("\\d|\\.") || stringList.get(i).matches("-?\\d")) {
                 buffer += stringList.get(i);
                 stringResult.append(stringList.get(i));
-                lastTokenIsANumber = true;
             }
-            if (stringList.get(i).matches("[+\\-*/]") && !stringList.get(i).matches("-?[0-9]?")) {
+            if (stringList.get(i).matches("[+\\-*/]") && stringList.get(i).matches("\\d(?!-)")) {
                 nombre.push(Double.parseDouble(buffer));
                 stringResult.append(stringList.get(i));
                 buffer = "";//Buffer goes BRUH!!
-                lastTokenIsANumber = false;
                 if (!(nombre.size() == 2)) {
                     operateur.push(stringList.get(i));
                 } else if (priorite(stringList.get(i)) > priorite(operateur.peek())) {
@@ -84,6 +80,17 @@ public class CalculBuilder {
                     for (int j = i; j < stringList.size(); j++) {
                         buffer3 += stringList.get(j);
                     }
+                    Task<Void> task = new Task<>() {
+                        @Override
+                        protected Void call() throws Exception {
+                            for (int i = 0; i < 10000000; i++) {
+                                System.out.println(i);
+                            }
+                            return null;
+                        }
+                    };
+                    Thread thread = new Thread(task);
+                    thread.start();
                     stringResult.delete(stringResult.length() - 2, stringResult.length());
                     nombre.pop();
                     nombre.pop();
