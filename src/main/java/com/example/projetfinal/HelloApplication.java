@@ -12,9 +12,6 @@ public class HelloApplication extends Application {
 
     private static Stage stage;
 
-
-    //bdshjxcfbhjsmndn chjdbj
-
     private static Scene scene1;
     private static Scene scene2;
 
