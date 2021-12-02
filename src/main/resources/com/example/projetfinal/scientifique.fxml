@@ -7,6 +7,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.BorderPane?>
@@ -16,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="513.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetfinal.HelloController">
+<BorderPane prefHeight="656.0" prefWidth="808.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetfinal.HelloController">
     <top>
         <MenuBar prefHeight="0.0" prefWidth="758.0" BorderPane.alignment="CENTER">
             <menus>
@@ -44,6 +45,7 @@
                             <Shadow />
                         </bumpInput>
                         <light>
+                            <Light.Distant color="#e4e4e4" />
                         </light>
                     </Lighting>
                 </effect>
@@ -56,7 +58,7 @@
                     <Font size="72.0" />
                 </font>
             </Label>
-            <GridPane prefHeight="229.0" prefWidth="645.0">
+            <GridPane prefHeight="609.0" prefWidth="1086.0">
                 <columnConstraints>
                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -64,15 +66,18 @@
                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 </columnConstraints>
                 <rowConstraints>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 </rowConstraints>
                 <children>
-                    <Button fx:id="bou7" mnemonicParsing="false" onAction="#onNumber7Click" prefHeight="126.0" prefWidth="369.0" text="7">
+                    <Button fx:id="bou7" mnemonicParsing="false" onAction="#onNumber7Click" prefHeight="165.0" prefWidth="232.0" text="7" GridPane.rowIndex="2">
                         <font>
                             <Font size="21.0" />
                         </font>
@@ -82,10 +87,14 @@
                                     <Shadow />
                                 </bumpInput>
                                 <light>
+                                    <Light.Distant color="#f2e55f" />
                                 </light>
                             </Lighting>
-                        </effect></Button>
-                    <Button fx:id="bou4" mnemonicParsing="false" onAction="#onNumber4Click" prefHeight="154.0" prefWidth="410.0" text="4" GridPane.rowIndex="1">
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin></Button>
+                    <Button fx:id="bou4" mnemonicParsing="false" onAction="#onNumber4Click" prefHeight="154.0" prefWidth="410.0" text="4" GridPane.rowIndex="3">
                         <font>
                             <Font size="21.0" />
                         </font>
@@ -95,10 +104,14 @@
                                     <Shadow />
                                 </bumpInput>
                                 <light>
+                                    <Light.Distant color="#f2e55f" />
                                 </light>
                             </Lighting>
-                        </effect></Button>
-                    <Button fx:id="bou1" mnemonicParsing="false" onAction="#onNumber1Click" prefHeight="95.0" prefWidth="432.0" text="1" GridPane.rowIndex="2">
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin></Button>
+                    <Button fx:id="bou1" mnemonicParsing="false" onAction="#onNumber1Click" prefHeight="95.0" prefWidth="432.0" text="1" GridPane.rowIndex="4">
                         <font>
                             <Font size="21.0" />
                         </font>
@@ -108,10 +121,14 @@
                                     <Shadow />
                                 </bumpInput>
                                 <light>
+                                    <Light.Distant color="#f2e55f" />
                                 </light>
                             </Lighting>
-                        </effect></Button>
-                    <Button fx:id="bou0" mnemonicParsing="false" onAction="#onNumber0Click" prefHeight="164.0" prefWidth="394.0" text="0" GridPane.rowIndex="3">
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin></Button>
+                    <Button fx:id="bou0" mnemonicParsing="false" onAction="#onNumber0Click" prefHeight="164.0" prefWidth="394.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                         <font>
                             <Font size="21.0" />
                         </font>
@@ -121,10 +138,14 @@
                                     <Shadow />
                                 </bumpInput>
                                 <light>
+                                    <Light.Distant color="#f2e55f" />
                                 </light>
                             </Lighting>
-                        </effect></Button>
-                    <Button fx:id="bou8" mnemonicParsing="false" onAction="#onNumber8Click" prefHeight="80.0" prefWidth="371.0" text="8" GridPane.columnIndex="1">
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin></Button>
+                    <Button fx:id="bou8" mnemonicParsing="false" onAction="#onNumber8Click" prefHeight="158.0" prefWidth="193.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2">
                         <font>
                             <Font size="21.0" />
                         </font>
@@ -134,10 +155,14 @@
                                     <Shadow />
                                 </bumpInput>
                                 <light>
+                                    <Light.Distant color="#f2e55f" />
                                 </light>
                             </Lighting>
-                        </effect></Button>
-                    <Button fx:id="bou5" mnemonicParsing="false" onAction="#onNumber5Click" prefHeight="75.0" prefWidth="389.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin></Button>
+                    <Button fx:id="bou5" mnemonicParsing="false" onAction="#onNumber5Click" prefHeight="138.0" prefWidth="195.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
                         <font>
                             <Font size="21.0" />
                         </font>
@@ -147,10 +172,14 @@
                                     <Shadow />
                                 </bumpInput>
                                 <light>
+                                    <Light.Distant color="#f2e55f" />
                                 </light>
                             </Lighting>
-                        </effect></Button>
-                    <Button fx:id="bou2" mnemonicParsing="false" onAction="#onNumber2Click" prefHeight="123.0" prefWidth="375.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin></Button>
+                    <Button fx:id="bou2" mnemonicParsing="false" onAction="#onNumber2Click" prefHeight="123.0" prefWidth="375.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="4">
                         <font>
                             <Font size="21.0" />
                         </font>
@@ -160,10 +189,14 @@
                                     <Shadow />
                                 </bumpInput>
                                 <light>
+                                    <Light.Distant color="#f2e55f" />
                                 </light>
                             </Lighting>
-                        </effect></Button>
-                    <Button fx:id="bouPoint" mnemonicParsing="false" onAction="#onPointClick" prefHeight="110.0" prefWidth="181.0" text="." GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin></Button>
+                    <Button fx:id="bou9" mnemonicParsing="false" onAction="#onNumber9Click" prefHeight="127.0" prefWidth="173.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2">
                         <font>
                             <Font size="21.0" />
                         </font>
@@ -173,10 +206,14 @@
                                     <Shadow />
                                 </bumpInput>
                                 <light>
+                                    <Light.Distant color="#f2e55f" />
                                 </light>
                             </Lighting>
-                        </effect></Button>
-                    <Button fx:id="bou9" mnemonicParsing="false" onAction="#onNumber9Click" prefHeight="210.0" prefWidth="418.0" text="9" GridPane.columnIndex="2">
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin></Button>
+                    <Button fx:id="bou6" mnemonicParsing="false" onAction="#onNumber6Click" prefHeight="123.0" prefWidth="375.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="3">
                         <font>
                             <Font size="21.0" />
                         </font>
@@ -186,10 +223,14 @@
                                     <Shadow />
                                 </bumpInput>
                                 <light>
+                                    <Light.Distant color="#f2e55f" />
                                 </light>
                             </Lighting>
-                        </effect></Button>
-                    <Button fx:id="bou6" mnemonicParsing="false" onAction="#onNumber6Click" prefHeight="123.0" prefWidth="375.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin></Button>
+                    <Button fx:id="bou3" mnemonicParsing="false" onAction="#onNumber3Click" prefHeight="123.0" prefWidth="375.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="4">
                         <font>
                             <Font size="21.0" />
                         </font>
@@ -199,10 +240,14 @@
                                     <Shadow />
                                 </bumpInput>
                                 <light>
+                                    <Light.Distant color="#f2e55f" />
                                 </light>
                             </Lighting>
-                        </effect></Button>
-                    <Button fx:id="bou3" mnemonicParsing="false" onAction="#onNumber3Click" prefHeight="123.0" prefWidth="375.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin></Button>
+                    <Button fx:id="bouNegatif" mnemonicParsing="false" onAction="#onNegatifClick" prefHeight="123.0" prefWidth="375.0" text="+/-" GridPane.columnIndex="2" GridPane.rowIndex="5">
                         <font>
                             <Font size="21.0" />
                         </font>
@@ -212,10 +257,14 @@
                                     <Shadow />
                                 </bumpInput>
                                 <light>
+                                    <Light.Distant color="#eeb43f" />
                                 </light>
                             </Lighting>
-                        </effect></Button>
-                    <Button fx:id="bouNegatif" mnemonicParsing="false" onAction="#onNegatifClick" prefHeight="123.0" prefWidth="375.0" text="+/-" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin></Button>
+                    <Button fx:id="bouCarre" mnemonicParsing="false" onAction="#onCarreClick" prefHeight="189.0" prefWidth="195.0" text="x²" GridPane.columnIndex="4" GridPane.rowIndex="2">
                         <font>
                             <Font size="21.0" />
                         </font>
@@ -225,10 +274,14 @@
                                     <Shadow />
                                 </bumpInput>
                                 <light>
+                                    <Light.Distant color="#b9b9b9" />
                                 </light>
                             </Lighting>
-                        </effect></Button>
-                    <Button fx:id="bouCarre" mnemonicParsing="false" onAction="#onCarreClick" prefHeight="58.0" prefWidth="528.0" text="x²" GridPane.columnIndex="3">
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin></Button>
+                    <Button fx:id="bouPlus" mnemonicParsing="false" onAction="#onAdditionClick" prefHeight="149.0" prefWidth="200.0" text="+" GridPane.columnIndex="4" GridPane.rowIndex="3">
                         <font>
                             <Font size="21.0" />
                         </font>
@@ -238,10 +291,14 @@
                                     <Shadow />
                                 </bumpInput>
                                 <light>
+                                    <Light.Distant color="#b9b9b9" />
                                 </light>
                             </Lighting>
-                        </effect></Button>
-                    <Button fx:id="bouPlus" mnemonicParsing="false" onAction="#onAdditionClick" prefHeight="57.0" prefWidth="427.0" text="+" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin></Button>
+                    <Button fx:id="bouMoins" mnemonicParsing="false" onAction="#onSoustractionClick" prefHeight="185.0" prefWidth="265.0" text="-" GridPane.columnIndex="4" GridPane.rowIndex="4">
                         <font>
                             <Font size="21.0" />
                         </font>
@@ -251,10 +308,14 @@
                                     <Shadow />
                                 </bumpInput>
                                 <light>
+                                    <Light.Distant color="#b9b9b9" />
                                 </light>
                             </Lighting>
-                        </effect></Button>
-                    <Button fx:id="bouMoins" mnemonicParsing="false" onAction="#onSoustractionClick" prefHeight="57.0" prefWidth="530.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin></Button>
+                    <Button fx:id="bouInverse" mnemonicParsing="false" onAction="#onInverseClick" prefHeight="175.0" prefWidth="211.0" text="1/x" GridPane.columnIndex="3" GridPane.rowIndex="5">
                         <font>
                             <Font size="21.0" />
                         </font>
@@ -264,10 +325,14 @@
                                     <Shadow />
                                 </bumpInput>
                                 <light>
+                                    <Light.Distant color="#b9b9b9" />
                                 </light>
                             </Lighting>
-                        </effect></Button>
-                    <Button fx:id="bouInverse" mnemonicParsing="false" onAction="#onInverseClick" prefHeight="57.0" prefWidth="854.0" text="1/x" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin></Button>
+                    <Button fx:id="bouRacine" mnemonicParsing="false" onAction="#onRacineClick" prefHeight="152.0" prefWidth="185.0" text="√x" GridPane.columnIndex="3" GridPane.rowIndex="2">
                         <font>
                             <Font size="21.0" />
                         </font>
@@ -277,10 +342,14 @@
                                     <Shadow />
                                 </bumpInput>
                                 <light>
+                                    <Light.Distant color="#b9b9b9" />
                                 </light>
                             </Lighting>
-                        </effect></Button>
-                    <Button fx:id="bouRacine" mnemonicParsing="false" onAction="#onRacineClick" prefHeight="126.0" prefWidth="369.0" text="√x" GridPane.columnIndex="4">
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin></Button>
+                    <Button fx:id="bouFois" mnemonicParsing="false" onAction="#onMultiplicationClick" prefHeight="126.0" prefWidth="369.0" text="*" GridPane.columnIndex="3" GridPane.rowIndex="3">
                         <font>
                             <Font size="21.0" />
                         </font>
@@ -290,10 +359,14 @@
                                     <Shadow />
                                 </bumpInput>
                                 <light>
+                                    <Light.Distant color="#b9b9b9" />
                                 </light>
                             </Lighting>
-                        </effect></Button>
-                    <Button fx:id="bouFois" mnemonicParsing="false" onAction="#onMultiplicationClick" prefHeight="126.0" prefWidth="369.0" text="*" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin></Button>
+                    <Button fx:id="bouDiviser" mnemonicParsing="false" onAction="#onDivisionClick" prefHeight="126.0" prefWidth="369.0" text="/" GridPane.columnIndex="3" GridPane.rowIndex="4">
                         <font>
                             <Font size="21.0" />
                         </font>
@@ -303,10 +376,14 @@
                                     <Shadow />
                                 </bumpInput>
                                 <light>
+                                    <Light.Distant color="#b9b9b9" />
                                 </light>
                             </Lighting>
-                        </effect></Button>
-                    <Button fx:id="bouDiviser" mnemonicParsing="false" onAction="#onDivisionClick" prefHeight="126.0" prefWidth="369.0" text="/" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin></Button>
+                    <Button fx:id="bouEgal" mnemonicParsing="false" onAction="#onEgalClick" prefHeight="200.0" prefWidth="225.0" text="=" GridPane.columnIndex="4" GridPane.rowIndex="5">
                         <font>
                             <Font size="21.0" />
                         </font>
@@ -316,10 +393,14 @@
                                     <Shadow />
                                 </bumpInput>
                                 <light>
+                                    <Light.Distant color="#656565" />
                                 </light>
                             </Lighting>
-                        </effect></Button>
-                    <Button fx:id="bouEgal" mnemonicParsing="false" onAction="#onEgalClick" prefHeight="57.0" prefWidth="312.0" text="=" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin></Button>
+                    <Button fx:id="bouEffacer" mnemonicParsing="false" onAction="#onEffacerClick" prefHeight="209.0" prefWidth="276.0" text="Effacer" GridPane.columnIndex="5" GridPane.rowIndex="5">
                         <font>
                             <Font size="21.0" />
                         </font>
@@ -329,10 +410,14 @@
                                     <Shadow />
                                 </bumpInput>
                                 <light>
+                                    <Light.Distant color="#656565" />
                                 </light>
                             </Lighting>
-                        </effect></Button>
-                    <Button fx:id="bouEffacer" mnemonicParsing="false" onAction="#onEffacerClick" prefHeight="57.0" prefWidth="312.0" text="Effacer" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin></Button>
+                    <Button fx:id="bouPoint" mnemonicParsing="false" onAction="#onPointClick" prefHeight="110.0" prefWidth="181.0" text="." GridPane.rowIndex="5">
                         <font>
                             <Font size="21.0" />
                         </font>
@@ -342,10 +427,302 @@
                                     <Shadow />
                                 </bumpInput>
                                 <light>
+                                    <Light.Distant color="#eeb43f" />
                                 </light>
                             </Lighting>
-                        </effect></Button>
-               <Button mnemonicParsing="false" prefHeight="221.0" prefWidth="346.0" text="Test" GridPane.columnIndex="5" />
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
+               <Button fx:id="bou71" mnemonicParsing="false" onAction="#onNumber7Click" prefHeight="165.0" prefWidth="232.0" text="Sin">
+                  <font>
+                     <Font size="21.0" />
+                  </font>
+                  <effect>
+                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                        <bumpInput>
+                           <Shadow />
+                        </bumpInput>
+                        <light>
+                           <Light.Distant color="#ff8882" />
+                        </light>
+                     </Lighting>
+                  </effect>
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button fx:id="bou72" mnemonicParsing="false" onAction="#onNumber7Click" prefHeight="165.0" prefWidth="232.0" text="Cos" GridPane.columnIndex="1">
+                  <font>
+                     <Font size="21.0" />
+                  </font>
+                  <effect>
+                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                        <bumpInput>
+                           <Shadow />
+                        </bumpInput>
+                        <light>
+                           <Light.Distant color="#ff8882" />
+                        </light>
+                     </Lighting>
+                  </effect>
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button fx:id="bou73" mnemonicParsing="false" onAction="#onNumber7Click" prefHeight="165.0" prefWidth="232.0" text="Tan" GridPane.columnIndex="2">
+                  <font>
+                     <Font size="21.0" />
+                  </font>
+                  <effect>
+                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                        <bumpInput>
+                           <Shadow />
+                        </bumpInput>
+                        <light>
+                           <Light.Distant color="#ff8882" />
+                        </light>
+                     </Lighting>
+                  </effect>
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button fx:id="bou74" mnemonicParsing="false" onAction="#onNumber7Click" prefHeight="165.0" prefWidth="232.0" text="ArcSin" GridPane.columnIndex="3">
+                  <font>
+                     <Font size="21.0" />
+                  </font>
+                  <effect>
+                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                        <bumpInput>
+                           <Shadow />
+                        </bumpInput>
+                        <light>
+                           <Light.Distant color="#ff8882" />
+                        </light>
+                     </Lighting>
+                  </effect>
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button fx:id="bou75" mnemonicParsing="false" onAction="#onNumber7Click" prefHeight="165.0" prefWidth="232.0" text="Arcos" GridPane.columnIndex="4">
+                  <font>
+                     <Font size="21.0" />
+                  </font>
+                  <effect>
+                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                        <bumpInput>
+                           <Shadow />
+                        </bumpInput>
+                        <light>
+                           <Light.Distant color="#ff8882" />
+                        </light>
+                     </Lighting>
+                  </effect>
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button fx:id="bou76" mnemonicParsing="false" onAction="#onNumber7Click" prefHeight="165.0" prefWidth="232.0" text="Arctan" GridPane.columnIndex="5">
+                  <font>
+                     <Font size="21.0" />
+                  </font>
+                  <effect>
+                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                        <bumpInput>
+                           <Shadow />
+                        </bumpInput>
+                        <light>
+                           <Light.Distant color="#ff8882" />
+                        </light>
+                     </Lighting>
+                  </effect>
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button fx:id="bou77" mnemonicParsing="false" onAction="#onNumber7Click" prefHeight="165.0" prefWidth="232.0" text="π" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                  <font>
+                     <Font size="21.0" />
+                  </font>
+                  <effect>
+                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                        <bumpInput>
+                           <Shadow />
+                        </bumpInput>
+                        <light>
+                           <Light.Distant color="#b0efff" />
+                        </light>
+                     </Lighting>
+                  </effect>
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button fx:id="bou78" mnemonicParsing="false" onAction="#onNumber7Click" prefHeight="165.0" prefWidth="232.0" text="(" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                  <font>
+                     <Font size="21.0" />
+                  </font>
+                  <effect>
+                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                        <bumpInput>
+                           <Shadow />
+                        </bumpInput>
+                        <light>
+                           <Light.Distant color="#94ffc9" />
+                        </light>
+                     </Lighting>
+                  </effect>
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button fx:id="bou79" mnemonicParsing="false" onAction="#onNumber7Click" prefHeight="165.0" prefWidth="232.0" text=")" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                  <font>
+                     <Font size="21.0" />
+                  </font>
+                  <effect>
+                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                        <bumpInput>
+                           <Shadow />
+                        </bumpInput>
+                        <light>
+                           <Light.Distant color="#94ffc9" />
+                        </light>
+                     </Lighting>
+                  </effect>
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button fx:id="bou711" mnemonicParsing="false" onAction="#onNumber7Click" prefHeight="165.0" prefWidth="232.0" text="e^x" GridPane.rowIndex="1">
+                  <font>
+                     <Font size="21.0" />
+                  </font>
+                  <effect>
+                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                        <bumpInput>
+                           <Shadow />
+                        </bumpInput>
+                        <light>
+                           <Light.Distant color="#ff8882" />
+                        </light>
+                     </Lighting>
+                  </effect>
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button fx:id="bou712" mnemonicParsing="false" onAction="#onNumber7Click" prefHeight="165.0" prefWidth="232.0" text="log" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <font>
+                     <Font size="21.0" />
+                  </font>
+                  <effect>
+                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                        <bumpInput>
+                           <Shadow />
+                        </bumpInput>
+                        <light>
+                           <Light.Distant color="#ff8882" />
+                        </light>
+                     </Lighting>
+                  </effect>
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button fx:id="bou713" mnemonicParsing="false" onAction="#onNumber7Click" prefHeight="165.0" prefWidth="232.0" text="ln" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <font>
+                     <Font size="21.0" />
+                  </font>
+                  <effect>
+                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                        <bumpInput>
+                           <Shadow />
+                        </bumpInput>
+                        <light>
+                           <Light.Distant color="#ff8882" />
+                        </light>
+                     </Lighting>
+                  </effect>
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button fx:id="bou714" mnemonicParsing="false" onAction="#onNumber7Click" prefHeight="165.0" prefWidth="232.0" text="x√x" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                  <font>
+                     <Font size="21.0" />
+                  </font>
+                  <effect>
+                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                        <bumpInput>
+                           <Shadow />
+                        </bumpInput>
+                        <light>
+                           <Light.Distant color="#ff8882" />
+                        </light>
+                     </Lighting>
+                  </effect>
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button fx:id="bou715" mnemonicParsing="false" onAction="#onNumber7Click" prefHeight="165.0" prefWidth="232.0" text="^x" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                  <font>
+                     <Font size="21.0" />
+                  </font>
+                  <effect>
+                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                        <bumpInput>
+                           <Shadow />
+                        </bumpInput>
+                        <light>
+                           <Light.Distant color="#ff8882" />
+                        </light>
+                     </Lighting>
+                  </effect>
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button fx:id="bou791" mnemonicParsing="false" onAction="#onNumber7Click" prefHeight="165.0" prefWidth="232.0" text="e" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                  <font>
+                     <Font size="21.0" />
+                  </font>
+                  <effect>
+                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                        <bumpInput>
+                           <Shadow />
+                        </bumpInput>
+                        <light>
+                           <Light.Distant color="#b0efff" />
+                        </light>
+                     </Lighting>
+                  </effect>
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button fx:id="bouModulo" mnemonicParsing="false" onAction="#onModuloClick" prefHeight="165.0" prefWidth="232.0" text="\%" GridPane.columnIndex="6">
+                  <font>
+                     <Font size="21.0" />
+                  </font>
+                  <effect>
+                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                        <bumpInput>
+                           <Shadow />
+                        </bumpInput>
+                        <light>
+                           <Light.Distant color="#ff8882" />
+                        </light>
+                     </Lighting>
+                  </effect>
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin>
+               </Button>
                 </children>
             </GridPane>
             <padding>
@@ -354,7 +731,7 @@
         </VBox>
     </center>
     <right>
-        <Label fx:id="historique" lineSpacing="3.0" prefHeight="486.0" prefWidth="95.0" style="-fx-background-color: lightGray;" text="Historique :" BorderPane.alignment="CENTER">
+        <Label fx:id="historique" lineSpacing="3.0" prefHeight="769.0" prefWidth="113.0" style="-fx-background-color: lightGray;" text="Historique :" BorderPane.alignment="CENTER">
             <font>
                 <Font name="Cambria Math" size="17.0" />
             </font>

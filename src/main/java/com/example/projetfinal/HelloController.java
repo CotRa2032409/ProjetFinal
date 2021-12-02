@@ -61,6 +61,10 @@ public class HelloController {
     private Button bouEgal;
     @FXML
     private Button bouEffacer;
+    @FXML
+    private Button bouModulo;
+
+    //Boutons Standard
 
     @FXML
     protected void onStandardButtonClick() {
@@ -215,4 +219,126 @@ public class HelloController {
         System.out.println(sb);
     }
 
+    //Boutons Scientifiques
+
+    @FXML
+    protected void onModuloClick() {
+        insert += bouModulo.getText();
+        textField.setText(insert);
+    }
+
+    @FXML
+    protected void onParentheseOuverteClick() {
+        insert += bouPlus.getText();
+        textField.setText(insert);
+    }
+
+    @FXML
+    protected void onParentheseFermeeClick() {
+        insert += bouPlus.getText();
+        textField.setText(insert);
+    }
+
+    @FXML
+    protected void onExposantClick() {
+        insert += bouPlus.getText();
+        textField.setText(insert);
+    }
+
+    @FXML
+    protected void onRacineArbitraireClick() {
+        insert += bouPlus.getText();
+        textField.setText(insert);
+    }
+
+    @FXML
+    protected void onSinClick() {
+        insert += bouPlus.getText();
+        textField.setText(insert);
+    }
+
+    @FXML
+    protected void onCosClick() {
+        insert += bouPlus.getText();
+        textField.setText(insert);
+    }
+
+    @FXML
+    protected void onTanClick() {
+        insert += bouPlus.getText();
+        textField.setText(insert);
+    }
+
+    @FXML
+    protected void onArcsinClick() {
+        insert += bouPlus.getText();
+        textField.setText(insert);
+    }
+
+    @FXML
+    protected void onArccosClick() {
+        insert += bouPlus.getText();
+        textField.setText(insert);
+    }
+
+    @FXML
+    protected void onArctanClick() {
+        insert += bouPlus.getText();
+        textField.setText(insert);
+    }
+
+    @FXML
+    protected void onEulerExposantClick() {
+        insert += bouPlus.getText();
+        textField.setText(insert);
+    }
+
+    @FXML
+    protected void onLogClick() {
+        insert += bouPlus.getText();
+        textField.setText(insert);
+    }
+
+    @FXML
+    protected void onLnClick() {
+        insert += bouPlus.getText();
+        textField.setText(insert);
+    }
+
+    @FXML
+    protected void onFactorielleClick() {
+        insert += bouPlus.getText();
+        textField.setText(insert);
+    }
+
+    @FXML
+    protected void onPiClick() {
+        insert += bouPlus.getText();
+        textField.setText(insert);
+    }
+
+    @FXML
+    protected void onEulerClick() {
+        insert += bouPlus.getText();
+        textField.setText(insert);
+    }
+
+    @FXML
+    protected void onEgalScientifiqueClick() throws NumberFormatException {
+        try {
+            insert = (CalculBuilder.calculBuilderScientifique(textField.getText()));
+            reponse.setText(insert);
+            historique.setText("Historique :\n" + reponse.getText());
+            //Pas fini
+            //VBox???
+            insert = "";
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            reponse.setText("Erreur");
+        }
+        finally {
+            insert = "";
+        }
+    }
 }
