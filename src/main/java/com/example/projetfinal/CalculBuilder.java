@@ -64,6 +64,18 @@ public class CalculBuilder {
         Stack<String> operateur = new Stack<>();
         String buffer = "";
         List<String> stringList = new ArrayList<>(Arrays.asList(calcul.split("")));
+        List<Integer> priorityList = new ArrayList<>();
+        Task<Void> task = new Task<>() {
+            @Override
+            protected Void call() {
+                for (int i = 0; i < stringList.size(); i++) {
+
+                }
+                return null;
+            }
+        };
+        Thread thread = new Thread(task);
+        thread.start();
         for (int i = 0; i < stringList.size(); i++) {
             if (stringList.get(i).matches("\\d|\\.") || stringList.get(i).matches("-?\\d")) {
                 buffer += stringList.get(i);
@@ -80,17 +92,7 @@ public class CalculBuilder {
                     for (int j = i; j < stringList.size(); j++) {
                         buffer3 += stringList.get(j);
                     }
-                    Task<Void> task = new Task<>() {
-                        @Override
-                        protected Void call() throws Exception {
-                            for (int i = 0; i < 10000000; i++) {
-                                System.out.println(i);
-                            }
-                            return null;
-                        }
-                    };
-                    Thread thread = new Thread(task);
-                    thread.start();
+
                     stringResult.delete(stringResult.length() - 2, stringResult.length());
                     nombre.pop();
                     nombre.pop();
@@ -134,6 +136,10 @@ public class CalculBuilder {
                     case "/" -> {
                         operateur.pop();
                         nombre.push(Operations.division(number1, number2));
+                    }
+                    case "%" -> {
+                        operateur.pop();
+                        nombre.push(Operations.modulo(number1,number2));
                     }
                 }
                 operateur.push(stringList.get(i));
