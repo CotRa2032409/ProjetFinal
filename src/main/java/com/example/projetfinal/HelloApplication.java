@@ -25,10 +25,10 @@ public class HelloApplication extends Application {
         stage.setTitle("Calculatrice");
         stage.setScene(scene1);
         stage.show();
-        int test = 4-2*3;
-        System.out.println(test);
 
-        System.out.println(CalculBuilder.calculBuilderScientifique("1+(4-2+(3-2)*3)"));
+        System.out.println(CalculBuilder.calculBuilderScientifique("-1*-1"));
+
+        //System.out.println(CalculBuilder.calculBuilderScientifique("1+(4-2+(3-2)*3)"));
     }
 
     public static void main(String[] args) {
