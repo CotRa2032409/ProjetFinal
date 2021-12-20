@@ -8,19 +8,18 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 
-public class HelloApplication extends Application {
+public class Calculatrice extends Application {
 
     private static Stage stage;
-
     private static Scene scene1;
     private static Scene scene2;
 
     @Override
     public void start(Stage stage) throws IOException {
-        HelloApplication.stage = stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        Calculatrice.stage = stage;
+        FXMLLoader fxmlLoader = new FXMLLoader(Calculatrice.class.getResource("hello-view.fxml"));
         scene1 = new Scene(fxmlLoader.load());
-        FXMLLoader fxmlLoader2 = new FXMLLoader(HelloApplication.class.getResource("scientifique.fxml"));
+        FXMLLoader fxmlLoader2 = new FXMLLoader(Calculatrice.class.getResource("scientifique.fxml"));
         scene2 = new Scene(fxmlLoader2.load());
         stage.setTitle("Calculatrice");
         stage.setScene(scene1);
@@ -38,7 +37,7 @@ public class HelloApplication extends Application {
     }
 
     public static void setStage(Stage stage) {
-        HelloApplication.stage = stage;
+        Calculatrice.stage = stage;
     }
 
     public static Scene getScene1() {

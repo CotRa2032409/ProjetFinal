@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
@@ -17,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="656.0" prefWidth="808.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetfinal.HelloController">
+<BorderPane prefHeight="656.0" prefWidth="808.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetfinal.Boutons">
     <top>
         <MenuBar prefHeight="0.0" prefWidth="758.0" BorderPane.alignment="CENTER">
             <menus>
@@ -27,37 +28,53 @@
                         <MenuItem mnemonicParsing="false" onAction="#onScientifiqueButtonClick" text="Scientifique" />
                     </items>
                 </Menu>
+            <Menu mnemonicParsing="false" text="Conversion">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#onDegreeToFahrenheit" text="C° -&gt; F°" />
+                  <MenuItem mnemonicParsing="false" onAction="#onFahrenheitToDegree" text="F° -&gt; C°" />
+                  <MenuItem mnemonicParsing="false" onAction="#onLivreToKg" text="Lb -&gt; kg" />
+                  <MenuItem mnemonicParsing="false" onAction="#onKgToLivre" text="kg -&gt; Lb" />
+                  <MenuItem mnemonicParsing="false" onAction="#onMetreToPouce" text="m -&gt; pouce" />
+                  <MenuItem mnemonicParsing="false" onAction="#onPouceToMetre" text="pouce -&gt; m" />
+                  <MenuItem mnemonicParsing="false" onAction="#onKmHToMs" text="km/h -&gt; m/s" />
+                  <MenuItem mnemonicParsing="false" onAction="#onMsToKmH" text="m/s -&gt; km/h" />
+                  <MenuItem mnemonicParsing="false" onAction="#onDegreeToRad" text="Degrée -&gt; Rad" />
+                  <MenuItem mnemonicParsing="false" onAction="#onRadToDegree" text="Rad -&gt; Degrée" />
+                  <MenuItem mnemonicParsing="false" onAction="#onSecondeToMinute" text="Seconde -&gt; Minutes" />
+                  <MenuItem mnemonicParsing="false" onAction="#onMinuteToSeconde" text="Minutes -&gt; Secondes" />
+              </items>
+            </Menu>
             </menus>
         </MenuBar>
     </top>
     <center>
         <VBox alignment="CENTER" fillWidth="false" prefHeight="427.0" prefWidth="740.0" spacing="20.0" BorderPane.alignment="CENTER">
-            <TextField fx:id="textField" promptText="Votre calcul">
+            <TextField fx:id="votreCalcul" promptText="Votre calcul">
                 <VBox.margin>
                     <Insets />
                 </VBox.margin>
                 <font>
                     <Font name="Cambria Math" size="30.0" />
                 </font>
-            <effect>
-               <Lighting diffuseConstant="1.38" specularConstant="0.0" specularExponent="7.31" surfaceScale="1.97">
-                  <bumpInput>
-                     <Shadow />
-                  </bumpInput>
-                  <light>
-                     <Light.Distant color="#e4e4e4" />
-                  </light>
-               </Lighting>
-            </effect>
+                <effect>
+                    <Lighting diffuseConstant="1.38" specularConstant="0.0" specularExponent="7.31" surfaceScale="1.97">
+                        <bumpInput>
+                            <Shadow />
+                        </bumpInput>
+                        <light>
+                            <Light.Distant color="#e4e4e4" />
+                        </light>
+                    </Lighting>
+                </effect>
             </TextField>
-         <Label fx:id="reponse" textAlignment="CENTER">
-            <VBox.margin>
-               <Insets />
-            </VBox.margin>
-            <font>
-               <Font size="72.0" />
-            </font>
-         </Label>
+            <Label fx:id="reponse" textAlignment="CENTER">
+                <VBox.margin>
+                    <Insets />
+                </VBox.margin>
+                <font>
+                    <Font size="72.0" />
+                </font>
+            </Label>
             <GridPane prefHeight="609.0" prefWidth="1086.0">
                 <columnConstraints>
                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -75,363 +92,383 @@
                 </rowConstraints>
                 <children>
                     <Button fx:id="bou7" mnemonicParsing="false" onAction="#onNumber7Click" prefHeight="165.0" prefWidth="232.0" text="7">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-                  <effect>
-                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant color="#f2e55f" />
-                        </light>
-                     </Lighting>
-                  </effect>
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></Button>
+                        <font>
+                            <Font name="Cambria Math" size="22.0" />
+                        </font>
+                        <effect>
+                            <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                                <bumpInput>
+                                    <Shadow />
+                                </bumpInput>
+                                <light>
+                                    <Light.Distant color="#f2e55f" />
+                                </light>
+                            </Lighting>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
                     <Button fx:id="bou4" mnemonicParsing="false" onAction="#onNumber4Click" prefHeight="154.0" prefWidth="410.0" text="4" GridPane.rowIndex="1">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-                  <effect>
-                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant color="#f2e55f" />
-                        </light>
-                     </Lighting>
-                  </effect>
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></Button>
+                        <font>
+                            <Font name="Cambria Math" size="22.0" />
+                        </font>
+                        <effect>
+                            <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                                <bumpInput>
+                                    <Shadow />
+                                </bumpInput>
+                                <light>
+                                    <Light.Distant color="#f2e55f" />
+                                </light>
+                            </Lighting>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
                     <Button fx:id="bou1" mnemonicParsing="false" onAction="#onNumber1Click" prefHeight="95.0" prefWidth="432.0" text="1" GridPane.rowIndex="2">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-                  <effect>
-                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant color="#f2e55f" />
-                        </light>
-                     </Lighting>
-                  </effect>
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></Button>
+                        <font>
+                            <Font name="Cambria Math" size="22.0" />
+                        </font>
+                        <effect>
+                            <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                                <bumpInput>
+                                    <Shadow />
+                                </bumpInput>
+                                <light>
+                                    <Light.Distant color="#f2e55f" />
+                                </light>
+                            </Lighting>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
                     <Button fx:id="bou0" mnemonicParsing="false" onAction="#onNumber0Click" prefHeight="164.0" prefWidth="394.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-                  <effect>
-                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant color="#f2e55f" />
-                        </light>
-                     </Lighting>
-                  </effect>
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></Button>
+                        <font>
+                            <Font name="Cambria Math" size="22.0" />
+                        </font>
+                        <effect>
+                            <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                                <bumpInput>
+                                    <Shadow />
+                                </bumpInput>
+                                <light>
+                                    <Light.Distant color="#f2e55f" />
+                                </light>
+                            </Lighting>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
                     <Button fx:id="bou8" mnemonicParsing="false" onAction="#onNumber8Click" prefHeight="158.0" prefWidth="193.0" text="8" GridPane.columnIndex="1">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-                  <effect>
-                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant color="#f2e55f" />
-                        </light>
-                     </Lighting>
-                  </effect>
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></Button>
+                        <font>
+                            <Font name="Cambria Math" size="22.0" />
+                        </font>
+                        <effect>
+                            <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                                <bumpInput>
+                                    <Shadow />
+                                </bumpInput>
+                                <light>
+                                    <Light.Distant color="#f2e55f" />
+                                </light>
+                            </Lighting>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
                     <Button fx:id="bou5" mnemonicParsing="false" onAction="#onNumber5Click" prefHeight="138.0" prefWidth="195.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-                  <effect>
-                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant color="#f2e55f" />
-                        </light>
-                     </Lighting>
-                  </effect>
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></Button>
+                        <font>
+                            <Font name="Cambria Math" size="22.0" />
+                        </font>
+                        <effect>
+                            <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                                <bumpInput>
+                                    <Shadow />
+                                </bumpInput>
+                                <light>
+                                    <Light.Distant color="#f2e55f" />
+                                </light>
+                            </Lighting>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
                     <Button fx:id="bou2" mnemonicParsing="false" onAction="#onNumber2Click" prefHeight="123.0" prefWidth="375.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-                  <effect>
-                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant color="#f2e55f" />
-                        </light>
-                     </Lighting>
-                  </effect>
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></Button>
+                        <font>
+                            <Font name="Cambria Math" size="22.0" />
+                        </font>
+                        <effect>
+                            <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                                <bumpInput>
+                                    <Shadow />
+                                </bumpInput>
+                                <light>
+                                    <Light.Distant color="#f2e55f" />
+                                </light>
+                            </Lighting>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
                     <Button fx:id="bou9" mnemonicParsing="false" onAction="#onNumber9Click" prefHeight="127.0" prefWidth="173.0" text="9" GridPane.columnIndex="2">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-                  <effect>
-                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant color="#f2e55f" />
-                        </light>
-                     </Lighting>
-                  </effect>
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></Button>
+                        <font>
+                            <Font name="Cambria Math" size="22.0" />
+                        </font>
+                        <effect>
+                            <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                                <bumpInput>
+                                    <Shadow />
+                                </bumpInput>
+                                <light>
+                                    <Light.Distant color="#f2e55f" />
+                                </light>
+                            </Lighting>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
                     <Button fx:id="bou6" mnemonicParsing="false" onAction="#onNumber6Click" prefHeight="123.0" prefWidth="375.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-                  <effect>
-                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant color="#f2e55f" />
-                        </light>
-                     </Lighting>
-                  </effect>
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></Button>
+                        <font>
+                            <Font name="Cambria Math" size="22.0" />
+                        </font>
+                        <effect>
+                            <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                                <bumpInput>
+                                    <Shadow />
+                                </bumpInput>
+                                <light>
+                                    <Light.Distant color="#f2e55f" />
+                                </light>
+                            </Lighting>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
                     <Button fx:id="bou3" mnemonicParsing="false" onAction="#onNumber3Click" prefHeight="123.0" prefWidth="375.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-                  <effect>
-                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant color="#f2e55f" />
-                        </light>
-                     </Lighting>
-                  </effect>
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></Button>
+                        <font>
+                            <Font name="Cambria Math" size="22.0" />
+                        </font>
+                        <effect>
+                            <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                                <bumpInput>
+                                    <Shadow />
+                                </bumpInput>
+                                <light>
+                                    <Light.Distant color="#f2e55f" />
+                                </light>
+                            </Lighting>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
                     <Button fx:id="bouNegatif" mnemonicParsing="false" onAction="#onNegatifClick" prefHeight="123.0" prefWidth="375.0" text="+/-" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-                  <effect>
-                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant color="#eeb43f" />
-                        </light>
-                     </Lighting>
-                  </effect>
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></Button>
+                        <font>
+                            <Font name="Cambria Math" size="22.0" />
+                        </font>
+                        <effect>
+                            <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                                <bumpInput>
+                                    <Shadow />
+                                </bumpInput>
+                                <light>
+                                    <Light.Distant color="#eeb43f" />
+                                </light>
+                            </Lighting>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
                     <Button fx:id="bouCarre" mnemonicParsing="false" onAction="#onCarreClick" prefHeight="189.0" prefWidth="195.0" text="x²" GridPane.columnIndex="4">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-                  <effect>
-                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant color="#b9b9b9" />
-                        </light>
-                     </Lighting>
-                  </effect>
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></Button>
+                        <font>
+                            <Font name="Cambria Math" size="22.0" />
+                        </font>
+                        <effect>
+                            <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                                <bumpInput>
+                                    <Shadow />
+                                </bumpInput>
+                                <light>
+                                    <Light.Distant color="#b9b9b9" />
+                                </light>
+                            </Lighting>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
                     <Button fx:id="bouPlus" mnemonicParsing="false" onAction="#onAdditionClick" prefHeight="149.0" prefWidth="200.0" text="+" GridPane.columnIndex="4" GridPane.rowIndex="1">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-                  <effect>
-                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant color="#b9b9b9" />
-                        </light>
-                     </Lighting>
-                  </effect>
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></Button>
+                        <font>
+                            <Font name="Cambria Math" size="22.0" />
+                        </font>
+                        <effect>
+                            <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                                <bumpInput>
+                                    <Shadow />
+                                </bumpInput>
+                                <light>
+                                    <Light.Distant color="#b9b9b9" />
+                                </light>
+                            </Lighting>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
                     <Button fx:id="bouMoins" mnemonicParsing="false" onAction="#onSoustractionClick" prefHeight="185.0" prefWidth="265.0" text="-" GridPane.columnIndex="4" GridPane.rowIndex="2">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-                  <effect>
-                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant color="#b9b9b9" />
-                        </light>
-                     </Lighting>
-                  </effect>
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></Button>
+                        <font>
+                            <Font name="Cambria Math" size="22.0" />
+                        </font>
+                        <effect>
+                            <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                                <bumpInput>
+                                    <Shadow />
+                                </bumpInput>
+                                <light>
+                                    <Light.Distant color="#b9b9b9" />
+                                </light>
+                            </Lighting>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
                     <Button fx:id="bouInverse" mnemonicParsing="false" onAction="#onInverseClick" prefHeight="175.0" prefWidth="211.0" text="1/x" GridPane.columnIndex="3" GridPane.rowIndex="3">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-                  <effect>
-                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant color="#b9b9b9" />
-                        </light>
-                     </Lighting>
-                  </effect>
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></Button>
+                        <font>
+                            <Font name="Cambria Math" size="22.0" />
+                        </font>
+                        <effect>
+                            <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                                <bumpInput>
+                                    <Shadow />
+                                </bumpInput>
+                                <light>
+                                    <Light.Distant color="#b9b9b9" />
+                                </light>
+                            </Lighting>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
                     <Button fx:id="bouRacine" mnemonicParsing="false" onAction="#onRacineClick" prefHeight="152.0" prefWidth="185.0" text="√x" GridPane.columnIndex="3">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-                  <effect>
-                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant color="#b9b9b9" />
-                        </light>
-                     </Lighting>
-                  </effect>
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></Button>
+                        <font>
+                            <Font name="Cambria Math" size="22.0" />
+                        </font>
+                        <effect>
+                            <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                                <bumpInput>
+                                    <Shadow />
+                                </bumpInput>
+                                <light>
+                                    <Light.Distant color="#b9b9b9" />
+                                </light>
+                            </Lighting>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
                     <Button fx:id="bouFois" mnemonicParsing="false" onAction="#onMultiplicationClick" prefHeight="126.0" prefWidth="369.0" text="*" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-                  <effect>
-                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant color="#b9b9b9" />
-                        </light>
-                     </Lighting>
-                  </effect>
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></Button>
+                        <font>
+                            <Font name="Cambria Math" size="22.0" />
+                        </font>
+                        <effect>
+                            <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                                <bumpInput>
+                                    <Shadow />
+                                </bumpInput>
+                                <light>
+                                    <Light.Distant color="#b9b9b9" />
+                                </light>
+                            </Lighting>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
                     <Button fx:id="bouDiviser" mnemonicParsing="false" onAction="#onDivisionClick" prefHeight="126.0" prefWidth="369.0" text="/" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-                  <effect>
-                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant color="#b9b9b9" />
-                        </light>
-                     </Lighting>
-                  </effect>
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></Button>
+                        <font>
+                            <Font name="Cambria Math" size="22.0" />
+                        </font>
+                        <effect>
+                            <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                                <bumpInput>
+                                    <Shadow />
+                                </bumpInput>
+                                <light>
+                                    <Light.Distant color="#b9b9b9" />
+                                </light>
+                            </Lighting>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
                     <Button fx:id="bouEgal" mnemonicParsing="false" onAction="#onEgalClick" prefHeight="200.0" prefWidth="225.0" text="=" GridPane.columnIndex="4" GridPane.rowIndex="3">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-                  <effect>
-                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant color="#656565" />
-                        </light>
-                     </Lighting>
-                  </effect>
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></Button>
+                        <font>
+                            <Font name="Cambria Math" size="22.0" />
+                        </font>
+                        <effect>
+                            <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                                <bumpInput>
+                                    <Shadow />
+                                </bumpInput>
+                                <light>
+                                    <Light.Distant color="#656565" />
+                                </light>
+                            </Lighting>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
                     <Button fx:id="bouEffacer" mnemonicParsing="false" onAction="#onEffacerClick" prefHeight="209.0" prefWidth="276.0" text="Effacer" GridPane.columnIndex="5" GridPane.rowIndex="3">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-                  <effect>
-                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant color="#656565" />
-                        </light>
-                     </Lighting>
-                  </effect>
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></Button>
+                        <font>
+                            <Font name="Cambria Math" size="22.0" />
+                        </font>
+                        <effect>
+                            <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                                <bumpInput>
+                                    <Shadow />
+                                </bumpInput>
+                                <light>
+                                    <Light.Distant color="#656565" />
+                                </light>
+                            </Lighting>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
                     <Button fx:id="bouPoint" mnemonicParsing="false" onAction="#onPointClick" prefHeight="110.0" prefWidth="181.0" text="." GridPane.rowIndex="3">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-                  <effect>
-                     <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant color="#eeb43f" />
-                        </light>
-                     </Lighting>
-                  </effect>
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin>
-               </Button>
+                        <font>
+                            <Font name="Cambria Math" size="22.0" />
+                        </font>
+                        <effect>
+                            <Lighting diffuseConstant="1.66" specularConstant="0.0" specularExponent="8.29" surfaceScale="2.11">
+                                <bumpInput>
+                                    <Shadow />
+                                </bumpInput>
+                                <light>
+                                    <Light.Distant color="#eeb43f" />
+                                </light>
+                            </Lighting>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                    </Button>
                 </children>
             </GridPane>
             <padding>
@@ -440,10 +477,10 @@
         </VBox>
     </center>
    <right>
-      <Label fx:id="historique" lineSpacing="3.0" prefHeight="769.0" prefWidth="113.0" style="-fx-background-color: lightGray;" text="Historique :" BorderPane.alignment="CENTER">
+      <TextArea fx:id="historique" editable="false" prefHeight="624.0" prefWidth="108.0" text="Historique :" BorderPane.alignment="CENTER">
          <font>
             <Font name="Cambria Math" size="17.0" />
          </font>
-      </Label>
+      </TextArea>
    </right>
 </BorderPane>

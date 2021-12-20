@@ -8,8 +8,8 @@ public class Operations {
         return a + b;
     }
 
-    public static double soustraction(double a, double b) {
-        return a - b;
+    public static double soustraction(double a, double b) throws NumberFormatException {
+            return a - b;
     }
 
     public static double multiplication(double a, double b) {
@@ -18,6 +18,14 @@ public class Operations {
 
     public static double division(double a, double b) {
         return a / b;
+    }
+
+    public static double Pi() {
+        return Math.PI;
+    }
+
+    public static double Euler() {
+        return Math.E;
     }
 
 

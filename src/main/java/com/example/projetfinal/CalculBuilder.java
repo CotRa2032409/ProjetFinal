@@ -17,7 +17,7 @@ public class CalculBuilder {
         String buffer = "";
         List<String> stringList = new ArrayList<>(Arrays.asList(calcul.split("")));
         for (int i = 0; i < stringList.size(); i++) {
-            if (stringList.get(i).matches("[0-9]|\\.") || stringList.get(i).matches("-?\\d")) {
+            if (stringList.get(i).matches("[0-9]|\\.") || stringList.get(i).equals("-")) {
                 buffer += stringList.get(i);
             }
             if (stringList.get(i).matches("[+\\-*/]")) {
@@ -134,6 +134,14 @@ public class CalculBuilder {
                     case "/" -> {
                         operateur.pop();
                         nombre.push(Operations.division(number1, number2));
+                    }
+                    case "π" -> {
+                        operateur.pop();
+                        nombre.push(Operations.Pi());
+                    }
+                    case "e" -> {
+                        operateur.pop();
+                        nombre.push(Operations.Euler());
                     }
                 }
                 operateur.push(stringList.get(i));
