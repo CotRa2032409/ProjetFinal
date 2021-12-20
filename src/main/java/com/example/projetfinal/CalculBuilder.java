@@ -1,7 +1,5 @@
 package com.example.projetfinal;
 
-import javafx.concurrent.Task;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,17 +14,35 @@ public class CalculBuilder {
         Stack<String> operateur = new Stack<>();
         String buffer = "";
         List<String> stringList = new ArrayList<>(Arrays.asList(calcul.split("")));
-        for (int i = 0; i < stringList.size(); i++) {
-            if (stringList.get(i).matches("[0-9]|\\.") || stringList.get(i).equals("-")) {
-                buffer += stringList.get(i);
-            }
-            if (stringList.get(i).matches("[+\\-*/]")) {
-                nombre.push(Double.parseDouble(buffer));
-                buffer = "";//Buffer goes BRUH!!
-                if (!(nombre.size() == 2)) {
-                    operateur.push(stringList.get(i));
+        Boolean boosted = null; //S'agit-il d'un opérateur?
+        int i;
+        for (i = 0; i < stringList.size(); i++) {
+            try {
+                if (stringList.get(i).equals("-")) {
+                    if (i == 0) {
+                        buffer += stringList.get(i);
+                        boosted = false;
+                    }
+                    if (boosted) {
+                        buffer += stringList.get(i);
+                    }
                 }
-            } else if (i == stringList.size() - 1) {
+                if (stringList.get(i).matches("\\d|\\.")) {
+                    buffer += stringList.get(i);
+                    boosted = false;
+                } else if (stringList.get(i).matches("[+\\-*/%]") && !boosted) {
+                    nombre.push(Double.parseDouble(buffer));
+                    buffer = "";//Buffer goes BRUH!!
+                    if (!(nombre.size() == 2)) {
+                        operateur.push(stringList.get(i));
+                        boosted = true;
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("TELL ME WHHHYY!! AIN'T NOTHING BUT A MISTAAAAAAAKE!!");
+            }
+            if (i == stringList.size() - 1) {
 
                 nombre.push(Double.parseDouble(buffer));
             }
@@ -63,56 +79,43 @@ public class CalculBuilder {
         Stack<Double> nombre = new Stack<>();
         Stack<String> operateur = new Stack<>();
         String buffer = "";
+        StringBuilder buffer2 = new StringBuilder("");
         List<String> stringList = new ArrayList<>(Arrays.asList(calcul.split("")));
-        for (int i = 0; i < stringList.size(); i++) {
-            if (stringList.get(i).matches("\\d|\\.") || stringList.get(i).matches("-?\\d")) {
-                buffer += stringList.get(i);
-                stringResult.append(stringList.get(i));
-            }
-            if (stringList.get(i).matches("[+\\-*/]") && stringList.get(i).matches("\\d(?!-)")) {
-                nombre.push(Double.parseDouble(buffer));
-                stringResult.append(stringList.get(i));
-                buffer = "";//Buffer goes BRUH!!
-                if (!(nombre.size() == 2)) {
-                    operateur.push(stringList.get(i));
-                } else if (priorite(stringList.get(i)) > priorite(operateur.peek())) {
-                    String buffer3 = stringList.get(i - 1);
-                    for (int j = i; j < stringList.size(); j++) {
-                        buffer3 += stringList.get(j);
-                    }
-                    Task<Void> task = new Task<>() {
-                        @Override
-                        protected Void call() throws Exception {
-                            for (int i = 0; i < 10000000; i++) {
-                                System.out.println(i);
-                            }
-                            return null;
-                        }
-                    };
-                    Thread thread = new Thread(task);
-                    thread.start();
-                    stringResult.delete(stringResult.length() - 2, stringResult.length());
-                    nombre.pop();
-                    nombre.pop();
-                    nombre.push(Double.parseDouble(calculBuilderStandard(buffer3)));
-                    stringResult.append(nombre.peek());
-                    nombre.push(Double.parseDouble(calculBuilderStandard(String.valueOf(stringResult))));
-                    stringResult.delete(0, stringResult.length());
-                    break;
-                }
-            }
-            if (stringList.get(i).matches("\\(")) {
-                String buffer2 = "";
-                for (int j = i + 1; j < stringList.size(); j++) {
-                    buffer2 += stringList.get(j);
-                    if (stringList.get(i).equals(")")) {
-                        calculBuilderStandard(buffer2);
-                    }
-                }
-            } else if (i == stringList.size() - 1) {
-                nombre.push(Double.parseDouble(buffer));
-            }
+        List<Integer> priorityList = new ArrayList<>();
+        Stack<String> parenthese = new Stack<>();
+        Boolean boosted = null; //S'agit-il d'un opérateur?
 
+        for (int i = 0; i < stringList.size(); i++) {
+
+            try {
+                if (stringList.get(i).equals("-")) {
+                    if (i == 0) {
+                        buffer += stringList.get(i);
+                        boosted = false;
+                    }
+                    if (boosted) {
+                        buffer += stringList.get(i);
+                    }
+                }
+                if (stringList.get(i).matches("\\d|\\.")) {
+                    buffer += stringList.get(i);
+                    boosted = false;
+
+                } else if (stringList.get(i).matches("[+\\-*/%]") && !boosted) {
+                    nombre.push(Double.parseDouble(buffer));
+                    buffer = "";//Buffer goes BRUH!!
+                    if (!(nombre.size() == 2)) {
+                        operateur.push(stringList.get(i));
+                        boosted = true;
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("TELL ME WHHHYY!! AIN'T NOTHING BUT A MISTAAAAAAAKE!!");
+            }
+            if (i == stringList.size() - 1) {
+                nombre.push(Double.parseDouble(buffer));
+            }
             if (!operateur.empty() && nombre.size() == 2) {
                 double number2 = nombre.peek();
                 nombre.pop();
@@ -135,20 +138,18 @@ public class CalculBuilder {
                         operateur.pop();
                         nombre.push(Operations.division(number1, number2));
                     }
-                    case "π" -> {
+                    case "%" -> {
                         operateur.pop();
-                        nombre.push(Operations.Pi());
-                    }
-                    case "e" -> {
-                        operateur.pop();
-                        nombre.push(Operations.Euler());
+                        nombre.push(Operations.modulo(number1, number2));
                     }
                 }
                 operateur.push(stringList.get(i));
             }
+
         }
         return String.valueOf(nombre.peek());
     }
+
 
     public static int priorite(String operateur) {
         int priorite = 0;
@@ -160,4 +161,5 @@ public class CalculBuilder {
             priorite = 3;
         return priorite;
     }
+
 }
