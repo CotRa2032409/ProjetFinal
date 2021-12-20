@@ -25,7 +25,9 @@ public class Calculatrice extends Application {
         stage.setScene(scene1);
         stage.show();
 
-        System.out.println(CalculBuilder.calculBuilderScientifique("-1-1"));
+        System.out.println(CalculBuilder.calculBuilderScientifique("-1*-1"));
+
+        //System.out.println(CalculBuilder.calculBuilderScientifique("1+(4-2+(3-2)*3)"));
     }
 
     public static void main(String[] args) {
